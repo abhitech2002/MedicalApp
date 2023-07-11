@@ -1,5 +1,5 @@
 const express = require("express")
-const { loginController, registerController, authController, applyDoctorController } = require("../controller/userCtrl")
+const { loginController, registerController, authController, applyDoctorController, getAllNotificationController,deleteAllNotificationController } = require("../controller/userCtrl")
 const authMiddleware = require("../middleware/authMiddleware")
 
 // router
@@ -16,6 +16,12 @@ router.post('/getUserData', authMiddleware, authController)
 
 // apply-doctor
 router.post('/apply-doctor', authMiddleware, applyDoctorController)
+
+// Notofication for doctor
+router.post('/get-all-notification', authMiddleware, getAllNotificationController)
+
+// Deleting Notofication for doctor
+router.post('/delete-all-notification', authMiddleware, deleteAllNotificationController)
 
 
 module.exports = router

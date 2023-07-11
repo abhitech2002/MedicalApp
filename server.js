@@ -20,6 +20,8 @@ app.use(moragan('dev'))
 // routes 
 app.use('/api/v1/user', require('./routes/userRoutes'))
 
+app.use('/api/v1/admin', require('./routes/adminRoutes') )
+
 const port = process.env.PORT || 8080
 
 app.listen(port, () => {
