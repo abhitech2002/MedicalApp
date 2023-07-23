@@ -21,7 +21,7 @@ const ApplyDoctor = () =>{
             })
             dispatch(hideLoading())
             if(res.data.success){
-                message.success(res.data.success)
+                message.success(res.data.message)
                 navigate('/')
             }
             else{
@@ -92,7 +92,7 @@ const ApplyDoctor = () =>{
                         </Form.Item>
                     </Col>
                     <Col xs={24} md={24} lg={8}>
-                        <Form.Item label='Timing' name='timing' required rules={[{required:true}]}>
+                        <Form.Item label='Timings' name='timings' required rules={[{required:true}]}>
                             <TimePicker.RangePicker format='HH:mm'/>
                         </Form.Item>
                     </Col>
